@@ -9,17 +9,17 @@ body {
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: royalblue;
+	color: #07111A;
 }
 
 a:visited {
-	color: purple;
+	color: #07111A;
 }
 
 a:hover,
 a:focus,
 a:active {
-	color: midnightblue;
+	color: #07111A;
 }
 
 a:focus {
@@ -34,11 +34,22 @@ a:active {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
+
+.nav-previous a, .nav-next a {
+	padding: 4px;
+	background: #495662;
+	border-radius: 4px;
+	display: inline-block;
+	color: #FAFAFA;
+
+}
+
 .main-navigation {
 	clear: both;
 	display: block;
 	float: left;
 	width: 100%;
+	margin: 8px 0;
 }
 
 .main-navigation ul {
@@ -51,11 +62,20 @@ a:active {
 .main-navigation li {
 	float: left;
 	position: relative;
+	padding: 4px;
+	margin: 2px;
+	background: #495662;
+	border-radius: 4px;
+	list-style: none;
+}
+.main-navigation li:nth-child(1) {
+	margin-left: 0;
 }
 
 .main-navigation a {
 	display: block;
 	text-decoration: none;
+	color: #FAFAFA;
 }
 
 .main-navigation ul ul {
@@ -405,6 +425,7 @@ object {
 
 body {
 	background-image: url('images/binding_dark.png');
+	font-size: 12pt;
 }
 
 h1, .h1 {
@@ -441,7 +462,18 @@ h5, .h5 {
 	vertical-align: top;
 	display: inline-block;
 }
-
+header#masthead h1, header#masthead h2 {
+	margin: 0;
+}
+header#masthead .site-branding {
+	margin: 0 -15px;
+	position: relative;
+}
+header#masthead .site-description {
+	position: absolute;
+	bottom: 8px;
+	right: 8px
+}
 header .entry-title {
 	margin: 12px 0;
 }
@@ -449,10 +481,75 @@ header.entry-header {
 	padding: 8px;
 	background-color: #19222B;
 	color: #fafafa;
+	position: relative;
+}
+header.entry-header i.fa {
+	position: absolute;
+	right: 8px;
+	top: 8px;
+	font-size: 12pt;
 }
 header.entry-header a, header.entry-header h1 {
 	color: #fafafa;
 }
 header.entry-header .entry-meta {
 	text-align: right;
+}
+header#masthead .site-title {
+	padding-top: 8px;
+	padding-left: 8px;
+}
+header .site-title a {
+	margin-top: ;
+	color: #fff;
+	text-shadow: 2px 1px 2px rgba(0, 0, 0, 1);
+	font-weight: bold;
+	text-transform: uppercase;
+}
+span.comments-link {
+	float: right;
+}
+span.edit-link {
+	display: block;
+}
+footer.entry-footer {
+	/*background-color: #19222B;
+	padding: 4px;
+	color: #FAFAFA;*/
+	border-bottom: 4px solid #495662;
+	padding-bottom: 6px;
+}
+#commentform label {
+	vertical-align: top;
+}
+textarea, textarea.form-control, input.form-control, input[type="text"], input[type="search"], input[type="url"], input[type="password"], input[type="email"], input[type="number"], .form-control[type="text"], .form-control[type="password"], .form-control[type="email"], .form-control[type="tel"], .form-control[contenteditable] {
+	width: 100%;
+}
+textarea#comment {
+	resize: none;
+}
+p.form-submit {
+	text-align: right;
+}
+
+li {
+	list-style:  square;
+}
+
+
+@media screen and (max-width: 1023px) {
+	#primary {
+		max-width: calc(100% - 320px);
+	}
+	#secondary {
+		max-width: 300px;
+	}
+}
+@media screen and (max-width: 1023px) {
+	#primary {
+		max-width: 100%;
+	}
+	#secondary {
+		max-width: 100%;
+	}
 }

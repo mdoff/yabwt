@@ -107,7 +107,7 @@ function yabwt_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'yabwt' ) );
 		if ( $categories_list && yabwt_categorized_blog() ) {
-			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'yabwt' ) . '</span>', $categories_list );
+			printf( '<span class="cat-links">' . esc_html__( '%1$s', 'yabwt' ) . '</span>', $categories_list );
 		}
 
 		/* translators: used between list items, there is a space after the comma */

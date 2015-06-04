@@ -69,6 +69,31 @@ function yabwt_render_title() {
 }
 add_action( 'wp_head', 'yabwt_render_title' );
 endif;
+
+function yabwt_get_post_icon() {
+		$icon = get_post_format();
+		if ( !$icon ) {
+				return "<i class=\"fa fa-file-text\"></i>";
+		}
+		elseif ( $icon === "video" ) {
+				return "<i class=\"fa fa-video-camera\"></i>";
+		}
+		elseif ( $icon === "link" ) {
+				return "<i class=\"fa fa-link\"></i>";
+		}
+		elseif ( $icon === "image" ) {
+				return "<i class=\"fa fa-picture-o\"></i>";
+		}
+		elseif ( $icon === "quote" ) {
+				return "<i class=\"fa fa-quote-right\"></i>";
+		}
+		elseif( $icon === "aside" ) {
+				//return "<i class=\"fa fa-pencil-square\"></i>";
+				return "";
+		}
+
+}
+
 /**
  * Disable the emoji's
  */
@@ -97,3 +122,25 @@ function disable_emojis_tinymce( $plugins ) {
 				return array();
 		}
 }
+
+$args = array(
+				'width'         => 1070,
+				'height'        => 160,
+				'default-image' => get_template_directory_uri() . '/images/logo.jpg',
+				'uploads'       => true,
+			 );
+add_theme_support( 'custom-header', $args );
+
+function theme_header_dynamic_style() {
+		?>
+				<style type="text/css">
+#masthead .site-branding {
+		background: url('<?php header_image();?>');
+		background-size: cover;
+		background-position: center;
+		min-height: 160px;
+}
+</style>
+<?php
+}
+add_action('wp_head', 'theme_header_dynamic_style');
